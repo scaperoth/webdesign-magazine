@@ -5,14 +5,24 @@
  */
 
 /*FONTS*/
+$title-font: sans-serif;
+$title-letter-spacing: .1em;
+$title-line-height:1em;
+$title-font-weight: normal;
+$title-font-style: normal;
+$title-font-size: 6.125em;;
+
 $head-font: 'Sumana', serif;
-$head-spacing: 10px;
-$head-height:1px;
+$head-letter-spacing: 10px;
+$head-line-height:1px;
+$head-font-weight: normal;
+$head-font-style: normal;
 
-$subhead-font: 'Advent Pro', sans-serif;
-$subhead-spacing: 10px;
-$subhead-height: 1px;
-
+$subhead-font: 'Elsie', cursive;
+$subhead-letter-spacing: 15px;
+$subhead-line-height:1px;
+$subhead-font-weight: normal;
+$subhead-font-style: normal;
 
 
 /*BREAK POINTS*/
@@ -27,10 +37,22 @@ $min-height-lg: 100%;
 
 /*COLOR OPTIONS*/
 $white: #f9f9f9;
-$left-side-background-color:#888;
+/*left*/
 $left-side-content-color:$white;
-$right-side-content-color:$white;
+$left-side-background-color:#888;
+/*right*/
+$right-side-top-content-color:#222;
+$right-side-top-overlay-color: #fff;
+$right-side-bottom-content-color:$white;
+$right-side-bottom-overlay-color: #000;
 $right-side-background-color: #fafafa;
+
+/*OPACITY*/
+$left-side-content-opacity:.8;
+$right-side-top-background-opacity:.4;
+$right-side-top-content-opacity:.8;
+$right-side-bottom-background-opacity:.7;
+$right-side-bottom-content-opacity:.8;
 
 /*IMAGE OPTIONS*/
 $left-image: url('colorful-model.jpeg');
@@ -60,12 +82,12 @@ body {
  */
 
 .codropsheader {
+
     color: $white;
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    float: left;
-    padding: 1.4em;
+    padding: 1.4em 0;
     opacity: 0.7;
     visibility: visible;
     -webkit-transition: opacity 0.3s;
@@ -73,12 +95,14 @@ body {
     /*background: #444444;*/
 }
 .codropsheader h1 {
-    letter-spacing: 20px;
-    font-size: 4.125em;
-    line-height: 1.3;
+    font:100% $title-font;
+    letter-spacing: $title-letter-spacing;
+    line-height:$title-line-height;
+    font-weight: $title-font-weight;
+    font-style: $title-font-style;
+    font-size: $title-font-size;
     margin: 0 0 0.6em 0;
     opacity: 1;
-    font-weight: 400;
 }
 .codropsheader > span {
     display: block;
@@ -113,62 +137,6 @@ body {
     position: absolute;
     color: #47a3da;
     background: #fff;
-}
-.codropsheader nav {
-    float: left;
-    text-align: center;
-    margin-left: 1.5em;
-    display: block;
-}
-.codropsheader nav a {
-    display: inline-block;
-    position: relative;
-    text-align: left;
-    width: 2.5em;
-    height: 2.5em;
-    background: #47a3da;
-    border-radius: 50%;
-    margin: 0 0.1em;
-    border: 3px solid #fff;
-}
-.codropsheader nav a > span {
-    display: none;
-}
-.codropsheader nav a:hover:before {
-    content: attr(data-info);
-    color: #fff;
-    position: absolute;
-    width: 600%;
-    top: 120%;
-    text-align: right;
-    right: 0;
-    pointer-events: none;
-}
-.codropsheader nav a:hover {
-    background: #fff;
-}
-.bp-icon:after {
-    font-family: 'bpicons';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    text-align: center;
-    color: #fff;
-    -webkit-font-smoothing: antialiased;
-}
-.codropsheader nav .bp-icon:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    line-height: 2;
-    text-indent: 0;
-}
-.codropsheader nav a:hover:after {
-    color: #47a3da;
 }
 /*END HEADER*/
 
@@ -205,53 +173,41 @@ body {
     position: relative;
     background: $right-side-background-color;
 }
+
+/*TOP RIGHT*/
 .sub-item-top {
     /*background:#2fc0da;*/
     
+    color: $right-side-top-content-color;
     background-image: $top-right-image;
     background-position:$top-right-image-position;
+
+    .intro-background{
+        background:$right-side-top-overlay-color;
+        opacity: $right-side-top-background-opacity;
+    }
+
+    h1{
+        opacity:$right-side-top-content-opacity;
+    }
 }
+
+/*BOTTOM RIGHT*/
 .sub-item-bottom {
     top: 50%;
     /**background:#ffdfda;*/
     
+    color: $right-side-bottom-content-color;
     background: $bottom-right-image;
     background-position:$bottom-right-image-position;
-}
 
-/*TITLE AND MAIN ITEM CONTENT*/
-.intro-content, .intro-background {
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    padding: 0 1em;
-    width: 50%;
-    color: $right-side-content-color;
-    padding: 10px;
-
-    h1 > span {
-        font-weight: 300;
-        font-size: 1em;
+    .intro-background{
+        background:$right-side-bottom-overlay-color;
+        opacity: $right-side-bottom-background-opacity;
     }
 
-    h1 > span:first-child {
-        font:100% $head-font;
-        letter-spacing: $head-spacing;
-        line-height:$head-height;
-        font-size: .9em;
-    }
-
-    h1 > span:nth-child(3){
-        font:100% $subhead-font;
-        letter-spacing: $subhead-spacing;
-        line-height:$subhead-height;
-        font-size:.7em;
-    }
-
-    #main-header{
-        opacity:.7;
-        color:$left-side-content-color;
-
+    h1{
+        opacity:$right-side-bottom-content-opacity;
     }
 
 }
@@ -263,16 +219,55 @@ body {
     overflow: hidden;
 
     .intro-background{
-        background:#000;
         height:100%;
         top:0;
-        opacity:.4;
     }
 
-    h1{
-        opacity:.7;
-    }
 }
+
+/*TITLE AND MAIN ITEM CONTENT*/
+.intro-content, .intro-background {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    padding: 0 1em;
+    width: 100%;
+    padding: 10px;
+
+    hr{
+        width:50%;
+    }
+    h1 > span {
+        font-weight: 300;
+        font-size: 1em;
+    }
+
+    h1 > span:first-child {
+        font:100% $head-font;
+        letter-spacing: $head-letter-spacing;
+        line-height:$head-line-height;
+        font-weight: $head-font-weight;
+        font-style: $head-font-style;
+        font-size: .9em;
+    }
+
+    h1 > span:nth-child(3){
+        font:100% $subhead-font;
+        letter-spacing: $subhead-letter-spacing;
+        line-height:$subhead-line-height;
+        font-weight: $subhead-font-weight;
+        font-style: $subhead-font-style;
+        font-size:.7em;
+    }
+
+    #main-header{
+        opacity:$left-side-content-opacity;
+        color:$left-side-content-color;
+
+    }
+
+}
+
 
 /*MEDIA QUERY FOR HOVER OVER ANIMATION*/
 @media(min-width:$medium-break-point){
