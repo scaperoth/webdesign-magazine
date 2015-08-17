@@ -1,0 +1,194 @@
+/* split css 
+ * controls css for splitting page into magazine format
+ */
+
+$min-height-mobile: 400px;
+$min-height-large: 1000px;
+$white: #fafafa;
+body {
+    padding: 0;
+}
+/**
+ * Header
+ */
+
+.codropsheader {
+    color: $white;
+    width: 40%;
+    margin: 0 auto;
+    text-align: left;
+    float: left;
+    padding: 1.4em;
+    opacity: 0.7;
+    visibility: visible;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.2s;
+    background: #444444;
+}
+.codropsheader h1 {
+    font-size: 3.125em;
+    line-height: 1.3;
+    margin: 0 0 0.6em 0;
+    float: left;
+    opacity: 1;
+    font-weight: 400;
+}
+.codropsheader > span {
+    display: block;
+    position: relative;
+    z-index: 9999;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    padding: 0 0 0.6em 0.1em;
+}
+.codropsheader > span span:after {
+    width: 30px;
+    height: 30px;
+    left: -12px;
+    font-size: 50%;
+    top: -8px;
+    font-size: 75%;
+    position: relative;
+}
+.codropsheader > span span:hover:before {
+    content: attr(data-content);
+    text-transform: none;
+    text-indent: 0;
+    letter-spacing: 0;
+    font-weight: 300;
+    font-size: 110%;
+    padding: 0.8em 1em;
+    line-height: 1.2;
+    text-align: left;
+    left: auto;
+    margin-left: 4px;
+    position: absolute;
+    color: #47a3da;
+    background: #fff;
+}
+.codropsheader nav {
+    float: left;
+    text-align: center;
+    margin-left: 1.5em;
+    display: block;
+}
+.codropsheader nav a {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 2.5em;
+    height: 2.5em;
+    background: #47a3da;
+    border-radius: 50%;
+    margin: 0 0.1em;
+    border: 3px solid #fff;
+}
+.codropsheader nav a > span {
+    display: none;
+}
+.codropsheader nav a:hover:before {
+    content: attr(data-info);
+    color: #fff;
+    position: absolute;
+    width: 600%;
+    top: 120%;
+    text-align: right;
+    right: 0;
+    pointer-events: none;
+}
+.codropsheader nav a:hover {
+    background: #fff;
+}
+.bp-icon:after {
+    font-family: 'bpicons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+.codropsheader nav .bp-icon:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 2;
+    text-indent: 0;
+}
+.codropsheader nav a:hover:after {
+    color: #47a3da;
+}
+/*END HEADER*/
+
+.right-side, .left-side {
+    background-size: 100%;
+    min-height: $min-height-mobile;
+}
+.right-side {
+    position: relative;
+    background: blue;
+}
+.left-side {
+    background: url('light-road-hat-travel.jpg') bottom;
+}
+.home-sub-item {
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 50%;
+    min-height: 1px;
+}
+.sub-item-top {
+    /*background:#2fc0da;*/
+
+background: url('pexels-photo.jpeg') bottom;
+}
+.sub-item-bottom {
+    top: 50%;
+    /**background:#ffdfda;*/
+
+background: url('pexels-photo2.jpg') bottom;
+}
+/*TITLE AND MAIN ITEM CONTENT*/
+
+.intro-content {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    padding: 0 1em;
+    width: 50%;
+    color: $white;
+    padding: 10px;
+    background: #777777;
+    opacity: .7;
+}
+.intro-content h1 > span:first-child {
+    font-weight: 300;
+    font-size: 2em;
+}
+.hover-zoom {
+    background-size: 100%;
+    overflow: hidden;
+}
+/*END TITLE AND MAIN ITEM CONTENT*/
+
+@media (min-height: 700px) {
+    .right-side, .left-side {
+        min-height: $min-height-large;
+   }
+   /*SECTIONS THAT ZOOM ON HOVER*/
+
+.hover-zoom:hover {
+	   
+       background-size: 110%;
+       transition: all 1s ease;
+       -webkit-transition: all 1s ease;
+       -o-transition: all 1s ease;
+       -moz-transition: all 1s ease;
+  }
+}
