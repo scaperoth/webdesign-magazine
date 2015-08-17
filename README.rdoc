@@ -1,28 +1,9 @@
-== README
+== Magazine Layout Design
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple website written in Ruby with dependancies in bootstrap and available user login. 
 
-Things you may want to cover:
+==== Screenshot
 
-* Ruby version
+https://cloud.githubusercontent.com/assets/3406362/9317737/9be814da-450b-11e5-8fd5-2254a494754a.png
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
