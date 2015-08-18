@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Split Layout</title>
+        <link rel="icon" type="image/ico" href="assets/icon.ico">
+        <title><%= @site_title  %>  <%= (:page_title.length > 0) ? yield(:page_title) : "" %> </title>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
