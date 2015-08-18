@@ -311,7 +311,7 @@ body {
 }
 
 /*MEDIA QUERY FOR LARGE SCREENS*/
-@media (min-width: $large-break-point) and (max-height: $large-break-point) {
+@media (min-width: $large-break-point) and (max-height: $large-break-point*1.1) {
     .right-side, .pull-right {
         float:right !important;
         border-left:2px solid #777777;
@@ -356,7 +356,7 @@ body {
 }
 
 /*MEDIA QUERY FOR LARGE VERTICLE SCREENS*/
-@media (min-width: $medium-break-point) and (min-height: $large-break-point) {
+@media (min-width: $medium-break-point) and (min-height: $large-break-point*1.1) {
     .left-side, .right-side{
        float:none !important;
        width:100%;
